@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "../styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
+import { NextAuthProvider } from "@/components/next-auth-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +24,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <NextAuthProvider>{children}</NextAuthProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
