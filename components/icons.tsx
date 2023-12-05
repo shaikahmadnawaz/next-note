@@ -1,8 +1,10 @@
-import { ChevronLeft, Loader2, LucideProps } from "lucide-react";
+import { ChevronLeft, Loader2, LogOut, LucideProps, User } from "lucide-react";
 
 export const Icons = {
   chevronLeft: ChevronLeft,
   spinner: Loader2,
+  user: User,
+  signout: LogOut,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
