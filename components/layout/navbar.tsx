@@ -14,7 +14,9 @@ export default function Navbar({ user }: NavbarProps) {
       <nav className="mx-auto flex items-center justify-between px-4 md:px-8 lg:max-w-7xl">
         <div className="flex items-center justify-between py-3 md:block md:py-5">
           <Link href="/">
-            <h1 className="text-2xl font-bold duration-200">NextNote</h1>
+            <h1 className="text-2xl font-bold text-primary duration-200">
+              NextNote
+            </h1>
           </Link>
         </div>
         <UserNavDisplay
