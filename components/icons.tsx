@@ -1,4 +1,21 @@
-import { ChevronLeft, Loader2, LogOut, LucideProps, Receipt, Settings, StickyNote, User } from "lucide-react";
+import {
+  ChevronLeft,
+  Codepen,
+  CreditCard,
+  Database,
+  Feather,
+  FileEdit,
+  Loader2,
+  Lock,
+  LogOut,
+  LucideProps,
+  Receipt,
+  Settings,
+  StickyNote,
+  Triangle,
+  User,
+  Wind,
+} from "lucide-react";
 
 export const Icons = {
   chevronLeft: ChevronLeft,
@@ -8,6 +25,15 @@ export const Icons = {
   note: StickyNote,
   receipt: Receipt,
   settings: Settings,
+  feather: Feather,
+  secure: Lock,
+  fileEdit: FileEdit,
+  nextJs: Codepen,
+  tailwindCss: Wind,
+  nextAuth: User,
+  postgreSql: Database,
+  prisma: Triangle,
+  stripe: CreditCard,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

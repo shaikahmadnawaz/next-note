@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Footer = () => {
+export default function Footer() {
   return (
     <footer className="mt-auto border-t">
       <div className="mx-auto w-full max-w-screen-xl p-6 md:py-8">
@@ -20,4 +20,4 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}
