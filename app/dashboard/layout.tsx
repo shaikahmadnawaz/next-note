@@ -27,7 +27,7 @@ export default async function DashboardLayoutProps({
           email: user?.email,
         }}
       />
-      <div className="container grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
+      <div className="container max-w-7xl grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
         <aside className="hidden w-[200px] flex-col md:flex">
           <Sidebar items={dashboardLinks.data} />
         </aside>
