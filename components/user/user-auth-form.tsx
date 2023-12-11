@@ -1,10 +1,12 @@
 "use client";
 
 import * as React from "react";
+import { signIn } from "next-auth/react";
+
 import { useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signIn } from "next-auth/react";
-import { useForm } from "react-hook-form";
+
+import { set, useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { cn } from "@/lib/utils";
@@ -58,7 +60,11 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>
-      <form method="post" action="/api/auth/sigin" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        method="post"
+        action="/api/auth/sigin"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div className="grid gap-2">
           <div className="grid gap-1">
             <Label className="sr-only" htmlFor="email">
@@ -99,10 +105,15 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         </div>
       </div>
       <Button
+        variant="outline"
         type="button"
-        onClick={() => {
+        onClick={async () => {
           setIsGitHubLoading(true);
-          signIn("github");
+          const signInResult = await signIn("github", {
+            redirect: false,
+            callbackUrl: "/dashboard",
+          });
+          setIsGitHubLoading(false);
         }}
         disabled={isLoading || isGitHubLoading}
       >
