@@ -23,8 +23,8 @@ export default function Navbar({ user }: NavbarProps) {
               <Icons.note className="h-6 w-6" />
             </div>
 
-            <span className="ml-2">NextNote</span>
-            <span className="sr-only">NextNote</span>
+            <span className="ml-2">Next Note</span>
+            <span className="sr-only">Next Note</span>
           </Link>
         </div>
         <div className="flex justify-center items-center gap-x-4">
