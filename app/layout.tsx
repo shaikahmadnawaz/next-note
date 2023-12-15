@@ -3,7 +3,6 @@ import { GeistSans } from "geist/font/sans";
 import "../styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
-import { NextAuthProvider } from "@/components/next-auth-provider";
 
 export const metadata: Metadata = {
   title: "Next Note",
@@ -24,7 +23,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NextAuthProvider>{children}</NextAuthProvider>
+          {children}
           <Toaster />
         </ThemeProvider>
       </body>
