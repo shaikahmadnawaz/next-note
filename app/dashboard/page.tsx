@@ -1,5 +1,7 @@
+import { EmptyPlaceholder } from "@/components/dashboard/empty-placeholder";
 import { DashboardHeader } from "@/components/dashboard/header";
 import { NoteCreateButton } from "@/components/dashboard/note-create-button";
+import { NoteItem } from "@/components/dashboard/note-item";
 import { DashboardShell } from "@/components/dashboard/shell";
 import prisma from "@/db/db";
 import { authOptions } from "@/lib/auth";
@@ -36,6 +38,24 @@ export default async function DashboardPage() {
       <DashboardHeader heading="Notes" text="Create and manage notes">
         <NoteCreateButton />
       </DashboardHeader>
+      <div>
+        {notes?.length ? (
+          <div className="divide-y divide-border rounded-md border">
+            {notes.map((note) => (
+              <NoteItem key={note.id} note={note} />
+            ))}
+          </div>
+        ) : (
+          <EmptyPlaceholder>
+            <EmptyPlaceholder.Icon name="note" />
+            <EmptyPlaceholder.Title>No notes created</EmptyPlaceholder.Title>
+            <EmptyPlaceholder.Description>
+              You don&apos;t have any notes yet. Start creating content.
+            </EmptyPlaceholder.Description>
+            <NoteCreateButton />
+          </EmptyPlaceholder>
+        )}
+      </div>
     </DashboardShell>
   );
 }

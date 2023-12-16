@@ -9,10 +9,12 @@ import {
   Lock,
   LogOut,
   LucideProps,
+  MoreVertical,
   Plus,
   Receipt,
   Settings,
   StickyNote,
+  Trash,
   Triangle,
   User,
   Wind,
@@ -24,6 +26,7 @@ export const Icons = {
   add: Plus,
   user: User,
   signout: LogOut,
+  trash: Trash,
   note: StickyNote,
   receipt: Receipt,
   settings: Settings,
@@ -36,6 +39,7 @@ export const Icons = {
   postgreSql: Database,
   prisma: Triangle,
   stripe: CreditCard,
+  threeVerticalDots: MoreVertical,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

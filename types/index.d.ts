@@ -1,5 +1,6 @@
 import { Icons } from "@/components/icons";
 import { icons } from "lucide-react";
+import type { Icon } from "lucide-react";
 
 export type SidebarItem = {
   title: string;
