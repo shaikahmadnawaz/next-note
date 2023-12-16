@@ -10,6 +10,9 @@ export const authOptions = {
   session: {
     strategy: "jwt",
   },
+  pages: {
+    signIn: "/login",
+  },
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_ID as string,
