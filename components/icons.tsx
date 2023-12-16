@@ -1,4 +1,5 @@
 import {
+  AlertTriangle,
   ChevronLeft,
   Codepen,
   CreditCard,
@@ -27,6 +28,7 @@ export const Icons = {
   user: User,
   signout: LogOut,
   trash: Trash,
+  warning: AlertTriangle,
   note: StickyNote,
   receipt: Receipt,
   settings: Settings,

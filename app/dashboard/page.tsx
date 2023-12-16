@@ -1,4 +1,4 @@
-import { EmptyPlaceholder } from "@/components/dashboard/empty-placeholder";
+import { EmptyPlaceholder } from "@/components/empty-placeholder";
 import { DashboardHeader } from "@/components/dashboard/header";
 import { NoteCreateButton } from "@/components/dashboard/note-create-button";
 import { NoteItem } from "@/components/dashboard/note-item";
