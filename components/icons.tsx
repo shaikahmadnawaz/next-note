@@ -9,6 +9,7 @@ import {
   Lock,
   LogOut,
   LucideProps,
+  Plus,
   Receipt,
   Settings,
   StickyNote,
@@ -20,6 +21,7 @@ import {
 export const Icons = {
   chevronLeft: ChevronLeft,
   spinner: Loader2,
+  add: Plus,
   user: User,
   signout: LogOut,
   note: StickyNote,
