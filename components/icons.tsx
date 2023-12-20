@@ -1,6 +1,7 @@
 import {
   AlertTriangle,
   ChevronLeft,
+  Chrome,
   Codepen,
   CreditCard,
   Database,
@@ -25,6 +26,7 @@ export const Icons = {
   chevronLeft: ChevronLeft,
   spinner: Loader2,
   add: Plus,
+  google: Chrome,
   user: User,
   signout: LogOut,
   trash: Trash,
