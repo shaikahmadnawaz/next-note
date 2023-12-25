@@ -30,6 +30,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     resolver: zodResolver(userAuthSchema),
   });
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [isGoogleLoading, setIsGoogleLoading] = React.useState<boolean>(false);
   const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
   const searchParams = useSearchParams();
 
@@ -60,7 +61,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>
-      <form
+      {/* <form
         method="post"
         action="/api/auth/sigin"
         onSubmit={handleSubmit(onSubmit)}
@@ -93,7 +94,27 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             Sign In with Email
           </Button>
         </div>
-      </form>
+      </form> */}
+      <Button
+        variant="outline"
+        type="button"
+        onClick={async () => {
+          setIsGoogleLoading(true);
+          const signInResult = await signIn("google", {
+            redirect: false,
+            callbackUrl: "/dashboard",
+          });
+          setIsGoogleLoading(false);
+        }}
+        disabled={isLoading || isGoogleLoading}
+      >
+        {isGoogleLoading ? (
+          <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+        ) : (
+          <Icons.google className="mr-2 h-4 w-4" />
+        )}{" "}
+        Google
+      </Button>
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
