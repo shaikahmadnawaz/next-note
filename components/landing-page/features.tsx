@@ -9,7 +9,7 @@ const Features = () => {
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center">
           Key Features
         </h2>
-        <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
+        <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3 justify-center">
           <div className="grid gap-1">
             <Icons.feather className="w-8 h-8 mb-2" />
             <h3 className="text-lg font-bold">Simple Notetaking</h3>

@@ -104,7 +104,7 @@ export function Editor({ note }: EditorProps) {
     if (!response?.ok) {
       return toast({
         title: "Something went wrong.",
-        description: "Your post was not saved. Please try again.",
+        description: "Your note was not saved. Please try again.",
         variant: "destructive",
       });
     }
@@ -112,7 +112,7 @@ export function Editor({ note }: EditorProps) {
     router.refresh();
 
     return toast({
-      description: "Your post has been saved.",
+      description: "Your note has been saved.",
     });
   }
 

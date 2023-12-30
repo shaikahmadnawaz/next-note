@@ -56,3 +56,29 @@ export async function PATCH(
     return new Response(null, { status: 500 });
   }
 }
+
+export async function DELETE(
+  req: Request,
+  context: z.infer<typeof routeContextSchema>
+) {
+  try {
+    const { params } = routeContextSchema.parse(context);
+
+    if (!(await verifyCurrentUserHasAccessToPost(params.noteId))) {
+      return new Response(null, { status: 403 });
+    }
+
+    await prisma.note.delete({
+      where: {
+        id: params.noteId as string,
+      },
+    });
+
+    return new Response(null, { status: 200 });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return new Response(JSON.stringify(error.issues), { status: 422 });
+    }
+    return new Response(null, { status: 500 });
+  }
+}
