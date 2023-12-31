@@ -3,7 +3,6 @@ import Stripe from "stripe";
 
 import prisma from "@/db/db";
 import { stripe } from "@/lib/stripe";
-import { Prisma } from "@prisma/client";
 
 export async function POST(req: Request) {
   const body = await req.text();
@@ -30,6 +29,8 @@ export async function POST(req: Request) {
       session.subscription as string
     );
 
+    console.log(subscription);
+
     await prisma.user.update({
       where: {
         id: session?.metadata?.userId,
@@ -41,7 +42,7 @@ export async function POST(req: Request) {
         stripeCurrentPeriodEnd: new Date(
           subscription.current_period_end * 1000
         ),
-      } as Prisma.UserUpdateInput,
+      },
     });
   }
 
@@ -55,13 +56,13 @@ export async function POST(req: Request) {
     await prisma.user.update({
       where: {
         stripeSubscriptionId: subscription.id,
-      } as unknown as Prisma.UserWhereUniqueInput,
+      },
       data: {
         stripePriceId: subscription.items.data[0].price.id,
         stripeCurrentPeriodEnd: new Date(
           subscription.current_period_end * 1000
         ),
-      } as Prisma.UserUpdateInput,
+      },
     });
   }
 
