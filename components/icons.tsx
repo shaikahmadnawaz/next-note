@@ -1,10 +1,13 @@
+import { TbBrandNextjs } from "react-icons/tb";
+import { SiTailwindcss } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { BsStripe } from "react-icons/bs";
+import { FaGoogle } from "react-icons/fa";
+
 import {
   AlertTriangle,
   ChevronLeft,
   Chrome,
-  Codepen,
-  CreditCard,
-  Database,
   Feather,
   FileEdit,
   Gem,
@@ -21,7 +24,6 @@ import {
   Trash,
   Triangle,
   User,
-  Wind,
 } from "lucide-react";
 
 export const Icons = {
@@ -29,7 +31,7 @@ export const Icons = {
   upgrade: Gem,
   spinner: Loader2,
   add: Plus,
-  google: Chrome,
+  google: FaGoogle,
   user: User,
   signout: LogOut,
   trash: Trash,
@@ -40,12 +42,12 @@ export const Icons = {
   feather: Feather,
   secure: Lock,
   fileEdit: FileEdit,
-  nextJs: Codepen,
-  tailwindCss: Wind,
+  nextJs: TbBrandNextjs,
+  tailwindCss: SiTailwindcss,
   nextAuth: User,
-  postgreSql: Database,
+  postgreSql: BiLogoPostgresql,
   prisma: Triangle,
-  stripe: CreditCard,
+  stripe: BsStripe,
   threeVerticalDots: MoreVertical,
   cart: ShoppingCart,
   gitHub: ({ ...props }: LucideProps) => (
