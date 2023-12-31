@@ -24,7 +24,7 @@ const Hero = () => {
             </Link>
             <Link
               className="inline-flex h-9 items-center justify-center rounded-md border border-primary bg-white px-4 py-2 text-sm font-medium text-primary shadow-sm transition-colors hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50"
-              href="/register"
+              href="/login"
             >
               Learn more
             </Link>
