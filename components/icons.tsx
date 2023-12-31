@@ -15,6 +15,7 @@ import {
   Plus,
   Receipt,
   Settings,
+  ShoppingCart,
   StickyNote,
   Trash,
   Triangle,
@@ -44,6 +45,7 @@ export const Icons = {
   prisma: Triangle,
   stripe: CreditCard,
   threeVerticalDots: MoreVertical,
+  cart: ShoppingCart,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

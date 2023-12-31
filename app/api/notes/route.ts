@@ -2,6 +2,8 @@ import { getServerSession } from "next-auth/next";
 import { z } from "zod";
 import { authOptions } from "@/lib/auth";
 import prisma from "@/db/db";
+import { getUserSubscriptionPlan } from "@/lib/subscriptions";
+import { RequiresProPlanError } from "@/lib/exceptions";
 
 const noteCreateSchema = z.object({
   title: z.string(),
@@ -52,6 +54,19 @@ export async function POST(req: Request) {
     }
 
     const { user } = session;
+    const subscriptionPlan = await getUserSubscriptionPlan(user.id);
+
+    if (!subscriptionPlan?.isPro) {
+      const count = await prisma.note.count({
+        where: {
+          authorId: user.id,
+        },
+      });
+
+      if (count >= 3) {
+        throw new RequiresProPlanError();
+      }
+    }
 
     if (!user?.id) {
       return new Response("User ID not found in session", { status: 422 });
@@ -80,6 +95,10 @@ export async function POST(req: Request) {
       return new Response(JSON.stringify(error.errors), {
         status: 422,
       });
+    }
+
+    if (error instanceof RequiresProPlanError) {
+      return new Response("Requires Pro Plan", { status: 402 });
     }
 
     console.error("Error in POST route:", error);

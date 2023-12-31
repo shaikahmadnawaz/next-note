@@ -35,16 +35,6 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async session({ token, session }) {
-      if (token) {
-        session.user.id = token.id;
-        session.user.name = token.name;
-        session.user.email = token.email;
-        session.user.image = token.picture;
-      }
-
-      return session;
-    },
     async jwt({ token, user }) {
       const dbUser = await prisma.user.findFirst({
         where: {
@@ -65,6 +55,17 @@ export const authOptions = {
         email: dbUser.email,
         picture: dbUser.image,
       };
+    },
+
+    async session({ token, session }) {
+      if (token) {
+        session.user.id = token.id;
+        session.user.name = token.name;
+        session.user.email = token.email;
+        session.user.image = token.picture;
+      }
+
+      return session;
     },
   },
 } satisfies NextAuthOptions;

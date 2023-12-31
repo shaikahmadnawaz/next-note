@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { UserAvatar } from "@/components/user/user-avatar";
+import Link from "next/link";
 
 interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
   user: Pick<User, "name" | "image" | "email">;
@@ -41,6 +42,14 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
             )}
           </div>
         </div>
+
+        <DropdownMenuSeparator />
+        <DropdownMenuItem className="cursor-pointer">
+          <Link href="/subscription" className="flex">
+            <Icons.cart className="mr-2 h-4 w-4" />
+            <span>Subscription</span>
+          </Link>
+        </DropdownMenuItem>
 
         <DropdownMenuSeparator />
         <DropdownMenuItem
