@@ -7,6 +7,7 @@ import {
   Database,
   Feather,
   FileEdit,
+  Gem,
   Loader2,
   Lock,
   LogOut,
@@ -25,6 +26,7 @@ import {
 
 export const Icons = {
   chevronLeft: ChevronLeft,
+  upgrade: Gem,
   spinner: Loader2,
   add: Plus,
   google: Chrome,

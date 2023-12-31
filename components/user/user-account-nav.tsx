@@ -46,8 +46,8 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
         <DropdownMenuSeparator />
         <DropdownMenuItem className="cursor-pointer">
           <Link href="/subscription" className="flex">
-            <Icons.cart className="mr-2 h-4 w-4" />
-            <span>Subscription</span>
+            <Icons.upgrade className="mr-2 h-4 w-4" />
+            <span>Upgrade</span>
           </Link>
         </DropdownMenuItem>
 
